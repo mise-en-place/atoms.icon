@@ -1,8 +1,9 @@
 // ==========================================================================
-// ICONS ATOM
+// Icons Atom
 // ==========================================================================
-// # ABSTRACT
 
+// @TODO should this be extracted out to YML?
+//
 $_icon-sizes: (
     10: 10,
     mini: 12,
@@ -22,7 +23,7 @@ $_icon-sizes: (
 /*doc
 ---
 title: Icon System
-name: 1_icons
+name: icons
 category: icons
 ---
 
@@ -64,8 +65,8 @@ Our icon system then allows us to apply sizing and colours to any icon.
 
 /*doc
 ---
-title: Colours
-name: 2_colours
+title: Colors
+name: colors
 category: icons
 ---
 
@@ -77,31 +78,18 @@ instead of using a bg image and apply a colour class.
 
 NB This will only work with simple, single colour icons.
 
-
 ```html_example_table
 <b data-grunticon-embed class="icon icon--search icon--white">Search</b>
-
 <b data-grunticon-embed class="icon icon--search icon--black">Search</b>
-
 <b data-grunticon-embed class="icon icon--search icon--xlight">Search</b>
-
 <b data-grunticon-embed class="icon icon--search icon--light">Search</b>
-
 <b data-grunticon-embed class="icon icon--search icon--mid">Search</b>
-
 <b data-grunticon-embed class="icon icon--search icon--dark">Search</b>
-
 <b data-grunticon-embed class="icon icon--search icon--xdark">Search</b>
-
 <b data-grunticon-embed class="icon icon--search icon--grey">Search</b>
-
 <b data-grunticon-embed class="icon icon--search icon--pink">Search</b>
-
 <b data-grunticon-embed class="icon icon--search icon--bluegrey">Search</b>
-
 <b data-grunticon-embed class="icon icon--search icon--bluegrey-dark">Search</b>
-
-
 ```
 */
 
@@ -130,7 +118,6 @@ NB This will only work with simple, single colour icons.
 
 
 @each $color, $shades in global-config('palettes') {
-
     @each $shade, $value in $shades {
 
         $shadeModifier: if($shade == 'base', '', '--#{$shade}');
@@ -146,7 +133,6 @@ NB This will only work with simple, single colour icons.
             $modifier: $shadeModifier;
         }
         @else {
-
         }
 
         .icon#{$modifier} path {
@@ -170,7 +156,7 @@ NB This will only work with simple, single colour icons.
 /*doc
 ---
 title: Sizes
-name: 3_sizes
+name: sizes
 category: icons
 ---
 
@@ -185,8 +171,6 @@ Custom sizes can be achieved by setting a height + width on the element with `.i
 <b class="icon icon--search icon--maxi">Briefcase</b>
 ```
 */
-
-
 
 @each $sizeName, $dimension in $_icon-sizes {
     .icon--#{$sizeName} {
@@ -207,13 +191,12 @@ Custom sizes can be achieved by setting a height + width on the element with `.i
 
 /*doc
 ---
-title: In buttons
-name: 4_buttons
+title: Icons In Buttons
+name: buttons
 category: icons
 ---
 
-When contained as the last item within a `.btn`, an icon will automatically align
-right with appropriate spacing.
+When contained as the last item within a `.btn`, an icon will automatically align right with appropriate spacing.
 
 Icons in buttons take the mini size and are aligned to the baseline so as to not
 affect button height, therefore
@@ -247,12 +230,5 @@ margins.
         @extend .icon--mini;
         position: relative; // [1] tweak to baseline - vertical-align: baseline doesn't look right
         top: -1px; // [1]
-        // margin-left: rem-calc(3);
-        // margin-right: rem-calc(-(map-get($_icon-sizes, mini)));
-
     }
-    // > .icon--left {
-    //     margin-left: rem-calc(-(map-get($_icon-sizes, mini)));
-    //     margin-right: rem-calc(3);
-    // }
 }
