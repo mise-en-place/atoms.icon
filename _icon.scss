@@ -50,7 +50,7 @@ Our icon system then allows us to apply sizing and colours to any icon.
 
 .icon {
     @include bg-cover();
-    @include text-replace();
+    @include screen-reader-only();
     display: inline-block;
     vertical-align: middle;
     @include icon-dimensions(map-get($_icon-sizes, midi));
