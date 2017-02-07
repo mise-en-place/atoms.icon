@@ -1,0 +1,31 @@
+{
+  "name": "mep-atoms.icon",
+  "version": "1.0.0",
+  "description": "Base atom for icons",
+  "main": "stylesheets/_icon.scss",
+  "eyeglass": {
+    "needs": "^1.0.0",
+    "name": "icon",
+    "exports": "eyeglass-exports.js"
+  },
+  "keywords": [
+    "eyeglass-module",
+    "sass",
+    "mise-en-place"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mise-en-place/atoms.icon.git"
+  },
+  "author": "Kind",
+  "license": "MIT",
+  "dependencies": {
+    "mep-tools.rem-calc": "github:mise-en-place/tools.rem-calc",
+    "mep-utilities.bg-cover": "github:mise-en-place/utilities.bg-cover",
+    "mep-utilities.screen-reader-only": "github:mise-en-place/utilities.screen-reader-only",
+    "mep-config.helpers": "github:mise-en-place/config.helpers",
+    "mep-tools.palette": "github:mise-en-place/tools.palette",
+    "mep-tools.link": "github:mise-en-place/tools.link",
+    "breakpoint-sass": "^2.7.1"
+  }
+}

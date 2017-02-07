@@ -2,23 +2,12 @@
 // Icons Atom
 // ==========================================================================
 
-// @TODO should this be extracted out to YML?
-//
-$_icon-sizes: (
-    10: 10,
-    mini: 12,
-    midi: 16,
-    maxi: 20,
-    // maxi: 30
-);
-
-@mixin icon-dimensions($size){
-    &,
-    & > svg {
-        width: rem-calc($size);
-        height: rem-calc($size);
-    }
-}
+@import 'tool-rem-calc';
+@import 'utilitity-bg-cover';
+@import 'utilitity-screen-reader';
+@import 'config-helpers';
+@import 'tool-palette';
+@import 'tool-link';
 
 /*doc
 ---
@@ -47,6 +36,24 @@ Our icon system then allows us to apply sizing and colours to any icon.
 
 ```
 */
+
+// @TODO should this be extracted out to YML?
+//
+$_icon-sizes: (
+    10: 10,
+    mini: 12,
+    midi: 16,
+    maxi: 20,
+    // maxi: 30
+);
+
+@mixin icon-dimensions($size){
+    &,
+    & > svg {
+        width: rem-calc($size);
+        height: rem-calc($size);
+    }
+}
 
 .icon {
     @include bg-cover();
