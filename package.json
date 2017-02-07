@@ -5,7 +5,7 @@
   "main": "stylesheets/_icon.scss",
   "eyeglass": {
     "needs": "^1.0.0",
-    "name": "icon",
+    "name": "atom-icon",
     "exports": "eyeglass-exports.js"
   },
   "keywords": [
